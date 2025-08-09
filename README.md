@@ -1,14 +1,12 @@
 # Pioneer Solutions - Employee Management System
-![Alt text]()
+#[Video Link](https://drive.google.com/file/d/1q-LH0joPDhhEvz9K_snEk6NXsB9Jv6Kl/view?usp=sharing)
+<br>
 ![Alt text](home.png)
 ![Alt text](Employees.png)
 ![Alt text](AddEmployee.png)
-![Alt text](Custom Property.png)
-![Alt text](Add property.png)
+![Alt text]('Custom Property.png')
+![Alt text]('Addproperty.png')
 
-<br>
-[Video Link](https://drive.google.com/file/d/1q-LH0joPDhhEvz9K_snEk6NXsB9Jv6Kl/view?usp=sharing)
-<br>
 
 
 
