@@ -5,7 +5,7 @@
 ![Alt text](Employees.png)
 ![Alt text](AddEmployee.png)
 ![Alt text]('Custom Property.png')
-![Alt text]('Addproperty.png')
+![Alt text]('Add property.png')
 
 
 
