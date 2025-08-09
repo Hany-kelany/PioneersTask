@@ -1,6 +1,17 @@
 # Pioneer Solutions - Employee Management System
-![Alt text](images/home page.png)
+![Alt text]()
+![Alt text](home.png)
+![Alt text](Employees.png)
+![Alt text](AddEmployee.png)
+![Alt text](Custom Property.png)
+![Alt text](Add property.png)
+
+<br>
 [Video Link](https://drive.google.com/file/d/1q-LH0joPDhhEvz9K_snEk6NXsB9Jv6Kl/view?usp=sharing)
+<br>
+
+
+
 ![Pioneer Solutions](https://img.shields.io/badge/Pioneer-Solutions-3498db?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.0-purple?style=for-the-badge&logo=bootstrap)
