@@ -1,0 +1,86 @@
+﻿@using PioneerSolutions.ViewModel
+@model CustomPropertyViewModel
+
+@{
+    ViewData["Title"] = "Edit Custom Property";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h4><i class="fas fa-edit"></i> @ViewData["Title"]</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" method="post">
+                        <input asp-for="Id" type="hidden" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Type" class="form-label"></label>
+                            <select asp-for="Type" class="form-select" id="propertyType">
+                                <option value="Text">Text</option>
+                                <option value="Number">Number</option>
+                                <option value="Date">Date</option>
+                                <option value="Boolean">Boolean (Yes/No)</option>
+                                <option value="Dropdown">Dropdown List</option>
+                            </select>
+                            <span asp-validation-for="Type" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input asp-for="IsRequired" class="form-check-input" />
+                                <label asp-for="IsRequired" class="form-check-label">
+                                    This property is required
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3" id="dropdownOptionsDiv">
+                            <label asp-for="DropdownOptionsText" class="form-label"></label>
+                            <textarea asp-for="DropdownOptionsText" class="form-control" rows="3" 
+                                    placeholder="Enter options separated by commas"></textarea>
+                            <div class="form-text">Separate multiple options with commas</div>
+                            <span asp-validation-for="DropdownOptionsText" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Update Property
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const propertyType = document.getElementById('propertyType');
+        const dropdownDiv = document.getElementById('dropdownOptionsDiv');
+
+        function toggleDropdownOptions() {
+            if (propertyType.value === 'Dropdown') {
+                dropdownDiv.style.display = 'block';
+            } else {
+                dropdownDiv.style.display = 'none';
+            }
+        }
+
+        toggleDropdownOptions(); // Initial call
+        propertyType.addEventListener('change', toggleDropdownOptions);
+    });
+</script>

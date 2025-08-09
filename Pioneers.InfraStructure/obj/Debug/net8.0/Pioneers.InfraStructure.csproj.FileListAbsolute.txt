@@ -1,0 +1,17 @@
+D:\.net projects\Pioneers.InfraStructure\bin\Debug\net8.0\Pioneers.InfraStructure.deps.json
+D:\.net projects\Pioneers.InfraStructure\bin\Debug\net8.0\Pioneers.InfraStructure.runtimeconfig.json
+D:\.net projects\Pioneers.InfraStructure\bin\Debug\net8.0\Pioneers.InfraStructure.dll
+D:\.net projects\Pioneers.InfraStructure\bin\Debug\net8.0\Pioneers.InfraStructure.pdb
+D:\.net projects\Pioneers.InfraStructure\bin\Debug\net8.0\Pioneers.Core.dll
+D:\.net projects\Pioneers.InfraStructure\bin\Debug\net8.0\Pioneers.Core.pdb
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.InfraStructure.csproj.AssemblyReference.cache
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.InfraStructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.InfraStructure.AssemblyInfoInputs.cache
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.InfraStructure.AssemblyInfo.cs
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.InfraStructure.csproj.CoreCompileInputs.cache
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.53D286B0.Up2Date
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.InfraStructure.dll
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\refint\Pioneers.InfraStructure.dll
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.InfraStructure.pdb
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\Pioneers.InfraStructure.genruntimeconfig.cache
+D:\.net projects\Pioneers.InfraStructure\obj\Debug\net8.0\ref\Pioneers.InfraStructure.dll

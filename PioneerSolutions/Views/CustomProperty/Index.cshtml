@@ -1,0 +1,98 @@
+﻿@using PioneerSolutions.ViewModel
+@model List<CustomPropertyViewModel>
+
+@{
+    ViewData["Title"] = "Custom Properties";
+}
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>@ViewData["Title"]</h2>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add New Property
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.Any())
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Options</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>
+                                        <span class="badge bg-info">@item.Type</span>
+                                    </td>
+                                    <td>
+                                        @if (item.IsRequired)
+                                        {
+                                            <span class="badge bg-warning">Required</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">Optional</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (item.Type == Pioneers.Core.Models.PropertyDataType.Dropdown && item.DropdownOptions.Any())
+                                        {
+                                            <small>@string.Join(", ", item.DropdownOptions.Select(o => o.Value).Take(3))@(item.DropdownOptions.Count > 3 ? "..." : "")</small>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">-</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-clipboard-list fa-3x text-muted mb-3"></i>
+                <h5>No Custom Properties Found</h5>
+                <p class="text-muted">Start by creating your first custom property for employees.</p>
+                <a asp-action="Create" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add First Property
+                </a>
+            </div>
+        </div>
+    }
+</div>

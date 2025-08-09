@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pioneer Solutions - Employee Management System</title>
+    <link href="~/css/Layoutcss.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg main-header">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand">
+                    <img src="Images/logo.png" width="120" alt="Pioneer Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Home" class="nav-link">
+                               <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Employee" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                All Employees
+                            </a>
+                        </li>
+                        <li  class="nav-item">
+                            <a asp-action="Create" asp-controller="Employee" class="nav-link" >
+                                <i class="fas fa-user-plus"></i>
+                                Add Employee
+                            </a>
+                        </li>
+                       
+                       
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="CustomProperty" class="nav-link" >
+                                <i class="fas fa-tools"></i>
+                                Custom Properties
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+  
+        <div class="container-fluid px-4"> 
+             <main class="main-content fade-in-up"> 
+                 @RenderBody() 
+             </main> 
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer class="pioneers-footer">
+        <div class="footer-main">
+            <div class="container-fluid px-4">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-company-info">
+                            <div class="footer-logo">
+                                <img src="Images/logo.png" width="120px" alt="Pioneer Logo" />
+                            </div>
+                            <p class="footer-description">
+                                A leading software development company with over 12 years of experience, providing comprehensive
+                                software solutions for managing and developing your business operations with integrated quality solutions.
+                            </p>
+
+                            <div class="footer-stats">
+                                <div class="footer-stat">
+                                    <span class="footer-stat-number">12+</span>
+                                    <div class="footer-stat-label">Years Experience</div>
+                                </div>
+                                <div class="footer-stat">
+                                    <span class="footer-stat-number">300+</span>
+                                    <div class="footer-stat-label">Websites</div>
+                                </div>
+                                <div class="footer-stat">
+                                    <span class="footer-stat-number">5000+</span>
+                                    <div class="footer-stat-label">Clients</div>
+                                </div>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="#" class="social-link" title="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link" title="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" title="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link" title="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-section">
+                            <h5>Quick Links</h5>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                                <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                                <li><a href="#"><i class="fas fa-cogs"></i> Services</a></li>
+                                <li><a href="#"><i class="fas fa-cube"></i> Products</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-section">
+                            <h5>Our Solutions</h5>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-calculator"></i> Accounting Systems</a></li>
+                                <li><a href="#"><i class="fas fa-graduation-cap"></i> School Management</a></li>
+                                <li><a href="#"><i class="fas fa-credit-card"></i> Payment Solutions</a></li>
+                                <li><a href="#"><i class="fas fa-hospital"></i> Medical Systems</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-section">
+                            <h5>Contact Information</h5>
+                            <ul class="contact-info">
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <strong>Head Office:</strong><br>
+                                        Cairo, Egypt<br>
+                                        Alexandria Branch Available
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <div>
+                                        <strong>Phone:</strong><br>
+                                        +20 100 123 4567<br>
+                                        +20 111 234 5678
+                                    </div>
+                                </li>
+                               
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container-fluid px-4">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        &copy; 2025 Pioneer Solutions. All rights reserved. | Employee Management System
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                $('.footer-stat-number').each(function() {
+                    const elementTop = $(this).offset().top;
+                    const elementBottom = elementTop + $(this).outerHeight();
+                    const viewportTop = $(window).scrollTop();
+                    const viewportBottom = viewportTop + $(window).height();
+
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        if (!$(this).hasClass('animated')) {
+                            $(this).addClass('animated');
+                            const finalNumber = $(this).text().replace(/[^0-9]/g, '');
+                            if (finalNumber) {
+                                animateNumber($(this), finalNumber);
+                            }
+                        }
+                    }
+                });
+            });
+
+            function animateNumber($element, finalNumber) {
+                let currentNumber = 0;
+                const increment = Math.ceil(finalNumber / 30);
+                const timer = setInterval(function() {
+                    currentNumber += increment;
+                    if (currentNumber >= finalNumber) {
+                        currentNumber = finalNumber;
+                        clearInterval(timer);
+                    }
+                    $element.text(currentNumber + ($element.text().includes('+') ? '+' : ''));
+                }, 50);
+            }
+
+            $('.social-link').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-3px) scale(1.1)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0) scale(1)');
+                }
+            );
+
+            $('.footer-links a').hover(
+                function() {
+                    $(this).css('transform', 'translateX(5px)');
+                },
+                function() {
+                    $(this).css('transform', 'translateX(0)');
+                }
+            );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿@using PioneerSolutions.ViewModel
+@model EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h4><i class="fas fa-user-edit"></i> @ViewData["Title"]</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" method="post">
+                        <input asp-for="Id" type="hidden" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Code" class="form-label"></label>
+                                    <input asp-for="Code" class="form-control" />
+                                    <span asp-validation-for="Code" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Name" class="form-label"></label>
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        @if (Model.PropertyValues.Any())
+                        {
+                            <hr />
+                            <h5 class="mb-3">Custom Properties</h5>
+
+                            @for (int i = 0; i < Model.PropertyValues.Count; i++)
+                            {
+                                <input asp-for="PropertyValues[i].CustomPropertyId" type="hidden" />
+                                <input asp-for="PropertyValues[i].PropertyName" type="hidden" />
+                                <input asp-for="PropertyValues[i].PropertyType" type="hidden" />
+                                <input asp-for="PropertyValues[i].IsRequired" type="hidden" />
+
+                                <div class="mb-3">
+                                    <label class="form-label">
+                                        @Model.PropertyValues[i].PropertyName
+                                        @if (Model.PropertyValues[i].IsRequired)
+                                        {
+                                            <span class="text-danger">*</span>
+                                        }
+                                    </label>
+
+                                    @switch (Model.PropertyValues[i].PropertyType.ToString())
+                                    {
+                                        case "Text":
+                                            <input asp-for="PropertyValues[i].Value" class="form-control" type="text" />
+                                            break;
+                                        case "Number":
+                                            <input asp-for="PropertyValues[i].Value" class="form-control" type="number" />
+                                            break;
+                                        case "Date":
+                                            <input asp-for="PropertyValues[i].Value" class="form-control" type="date" />
+                                            break;
+                                        case "Boolean":
+                                            <select asp-for="PropertyValues[i].Value" class="form-select">
+                                                <option value="">Select...</option>
+                                                <option value="true">Yes</option>
+                                                <option value="false">No</option>
+                                            </select>
+                                            break;
+                                        case "Dropdown":
+                                            <select asp-for="PropertyValues[i].Value" class="form-select">
+                                                <option value="">Select...</option>
+                                                @foreach (var option in Model.PropertyValues[i].DropdownOptions)
+                                                {
+                                                    <option value="@option.Value">@option.Value</option>
+                                                }
+                                            </select>
+                                            break;
+                                    }
+
+                                    @if (Model.PropertyValues[i].IsRequired)
+                                    {
+                                        <div class="form-text text-danger">This field is required</div>
+                                    }
+                                </div>
+                            }
+                        }
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Update Employee
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
